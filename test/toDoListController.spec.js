@@ -10,7 +10,7 @@ describe('toDoList', function() {
     });
   }));
 
-  it('initialises with an empty toDoList', function() {
+  it('initialises with an empty list', function() {
     expect(scope.toDos.length).toEqual(0);
   });
 
@@ -20,12 +20,28 @@ describe('toDoList', function() {
     expect(scope.toDos.length).toEqual(1);
   });
 
-  it('can remove items from the list', function(){
+  it('can mark an item as complete', function(){
     scope.text = "Go to work";
+    scope.submit();
+    scope.toDos[0].done = true
+    expect(scope.toDos[0].done).toBe(true)
+  });
+
+  it('can remove an item from list if complete', function(){
+    scope.text = "Go to work";
+    scope.submit();
+    scope.text = "Go home"
+    scope.submit();
+    scope.clearOne(0);
+    expect(scope.tasks).toEqual(1)
+  });
+
+  it('can clear all items from the list', function(){
+    scope.text = "Go to work";
+    scope.submit;
+    scope.text = "Go home";
     scope.submit;
     scope.clear();
     expect(scope.toDos.length).toEqual(0);
-  })
-
-
+  });
 });
