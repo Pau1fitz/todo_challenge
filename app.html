@@ -2,34 +2,38 @@
 <html ng-app= "toDoList">
  <head>
   <meta charset="UTF-8">
-  <title>title</title>
+  <title>To Do List</title>
+
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link href='http://fonts.googleapis.com/css?family=Ranchers' rel='stylesheet' type='text/css'>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
  </head>
  <body ng-controller="toDoListController">
+  <div class="jumbotron">
+    <header>To Do List</header>
+  </div>
+    <form ng-submit="submit()">
+    Enter text and hit enter:
+      <input type="text" ng-model="text" name="text" placeholder="What needs to be done?"/>
+      <input type="submit" value="Submit" />
+    </form>
 
-  <form ng-submit="submit()">
-  Enter text and hit enter:
-  <input type="text" ng-model="text" name="text" placeholder="What needs to be done?"/>
-  <input type="submit" value="Submit" />
-</form>
+    <div id="list">
+      <li ng-repeat="toDo in toDos">
+        <p id="para" ng-class="{strike: deleted}">{{ toDo.text }}</p>
+        <input id="checkbox" type="checkbox" ng-model="deleted" ng-click="clearOne($index)">
+      </li>
+    </div>
 
- <li ng-repeat="toDo in toDos">
-  <p ng-class="{strike: deleted}">{{ toDo.text }}</p>
-  <input type="checkbox" ng-model="deleted" ng-click="clearOne()">
- </li>
+    <p>Tasks left to complete: {{ tasks }}</p>
 
- <p>Tasks left to complete: {{ tasks}}</p>
-
- <p>Total Tasks: {{ toDos.length}}</p>
- <form ng-submit="clear()">
-  <input type="submit" value="Clear all">
-</form>
-
-
-
+    <p>Total Tasks: {{ toDos.length}}</p>
+    <form ng-submit="clear()">
+      <input type="submit" value="Clear all">
+    </form>
  </body>
 </html>
 
