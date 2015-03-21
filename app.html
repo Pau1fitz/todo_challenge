@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>To Do List</title>
 
-<link href='http://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
-
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
+<link href='http://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
@@ -41,6 +40,11 @@
     <form ng-submit="clear()">
       <input class="btn-sm" type="submit" value="Clear all">
     </form>
+
+    <li ng-repeat="toDo in toDos | filter: { done: true }">
+      {{ toDo.text  }}
+    </li>
+
     </div>
     </div>
     </div>
