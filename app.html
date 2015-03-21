@@ -2,11 +2,14 @@
 <html ng-app= "toDoList">
  <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>To Do List</title>
+
+<link href='http://fonts.googleapis.com/css?family=Kranky' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link href='http://fonts.googleapis.com/css?family=Ranchers' rel='stylesheet' type='text/css'>
+
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
@@ -15,10 +18,14 @@
   <div class="jumbotron">
     <header>To Do List</header>
   </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <div id="main">
     <form ng-submit="submit()">
     Enter text and hit enter:
-      <input type="text" ng-model="text" name="text" placeholder="What needs to be done?"/>
-      <input type="submit" value="Submit" />
+      <input id="inputText" type="text" ng-model="text" name="text" placeholder="What needs to be done?" size="25"/>
+      <input class="btn-sm" type="submit" value="Submit" />
     </form>
 
     <div id="list">
@@ -32,8 +39,11 @@
 
     <p>Total Tasks: {{ toDos.length}}</p>
     <form ng-submit="clear()">
-      <input type="submit" value="Clear all">
+      <input class="btn-sm" type="submit" value="Clear all">
     </form>
+    </div>
+    </div>
+    </div>
  </body>
 </html>
 

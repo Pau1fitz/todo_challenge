@@ -5,7 +5,7 @@
 header{
   text-align: center;
   color: yellow;
-  font-family: 'Ranchers', cursive;
+  font-family: 'Kranky', cursive;
   font-size: 30px;
 }
 
@@ -15,5 +15,15 @@ li{
 
 #para{
   display: inline-block;
+}
+
+#main{
+  color: yellow;
+  position: relative;
+  left: 35%;
+}
+
+#inputText{
+  color: black;
 }
 
