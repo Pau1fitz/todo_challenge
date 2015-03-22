@@ -43,10 +43,10 @@
 
     <p>Total Tasks: {{ toDos.length}}</p>
 
-    <button class="btn-sm" ng-click="changeView(0)">All</button>
-    <button class="btn-sm" ng-click="changeView(1)">Complete</button>
-    <button class="btn-sm" ng-click="changeView(2)">Incomplete</button>
-    <button class="btn-sm" ng-click="clear()">Clear All</button>
+    <button id="allButton" class="btn-sm" ng-click="changeView(0)">All</button>
+    <button id="completeButton" class="btn-sm" ng-click="changeView(1)">Complete</button>
+    <button id="incompleteButton" class="btn-sm" ng-click="changeView(2)">Incomplete</button>
+    <button id="clearButton" class="btn-sm" ng-click="clear()">Clear All</button>
 
     </div>
  </body>
