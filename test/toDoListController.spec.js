@@ -38,10 +38,20 @@ describe('toDoList', function() {
 
   it('can clear all items from the list', function(){
     scope.text = "Go to work";
-    scope.submit;
+    scope.submit();
     scope.text = "Go home";
-    scope.submit;
+    scope.submit();
     scope.clear();
     expect(scope.toDos.length).toEqual(0);
   });
+
+  it('resets the tasks left to complete to zero after clearing', function(){
+    scope.text = "Go to work";
+    scope.submit();
+    scope.text = "Go home";
+    scope.submit();
+    scope.clear();
+    expect(scope.tasks).toEqual(0);
+  })
+
 });
