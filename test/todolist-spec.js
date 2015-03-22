@@ -1,12 +1,23 @@
 describe('toDoList homepage', function() {
-  it('should add a todo', function() {
-    browser.get('file://localhost/Users/paulfitzgerald/Desktop/Makers%20Academy/to_do_list_angular/app.html');
+  it('should have a title', function() {
+    browser.get('http://localhost:3000/app.html');
+    expect(browser.getTitle()).toEqual('To Do List');
+  });
 
-    element(by.model('todoText')).sendKeys('write a protractor test');
-    element(by.css('[value="add"]')).click();
+  it('should add a list item to toDoList', function() {
+    browser.get('http://localhost:3000/app.html');
+    element(by.model('text')).sendKeys("Go To School");
+    element(by.id('button')).click();
 
-    var todoList = element.all(by.repeater('todo in todos'));
-    expect(todoList.count()).toEqual(3);
-    expect(todoList.get(2).getText()).toEqual('write a protractor test');
+    expect(element(by.id('para')).getText()).toEqual('Go To School');
+  });
+
+   it('by default should show all tasks that need to be completed', function() {
+    browser.get('http://localhost:3000/app.html');
+    element(by.model('text')).sendKeys("Go To School");
+    element(by.id('button')).click();
+    element(by.model('text')).sendKeys("Go Home");
+    element(by.id('button')).click();
+    expect(element(by.id('list')).getText()).toContain("Go To School" && "Go Home");
   });
 });
