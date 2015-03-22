@@ -8,5 +8,9 @@ software TDD methodologies were employed using Jasmine and Karma for unit testin
 <p> Javascript, Angular, Bootstrap CSS, jQuery, Google Fonts, Protractor, Jasmine, Karma.
 
 <h4>Set Up
-<p>To set up run
+<p>To set up run clone this repository and run the following commands.
+
+```bower install```
+
+```npm install```
 
