@@ -1,3 +1,5 @@
+![alt tag](https://github.com/Pau1fitz/to_do_list_angular/blob/master/toDoList.png)
+
 <h3>To Do List Angular.js
 
 <p> To Do List application created using the Angular JS MVC framework. This application allows a user to add items to a list, following which
