@@ -3,7 +3,7 @@
 }
 
 header{
-  color: yellow;
+  color: black;
   font-family: 'Poiret One', cursive;
   font-size: 50px;
   font-weight: bold;
@@ -37,6 +37,10 @@ li{
   color: black;
 }
 
+p{
+   font-family: 'Poiret One', cursive;
+}
+
 #list {
   color: #555;
   font-size: 22px;
@@ -44,6 +48,7 @@ li{
   width: 100%;
   font-family: courier, monospace;
   border: 1px solid #dedede;
+  background-color: beige;
 }
 
 #list li {
