@@ -16,3 +16,6 @@ software TDD methodologies were employed using Jasmine and Karma for unit testin
 
 ```npm install```
 
+
+<h4>Issues
+<p>Currently travis is not running. Would like to resolve this issue today.
