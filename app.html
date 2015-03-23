@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app= "toDoList">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+ <body ng-controller="toDoListController">
+  <div class="jumbotron">
+    <header>To Do List</header>
+  </div>
+
+      <div id="main">
+        <form ng-submit="submit()">
+          <input id="inputText" type="text" ng-model="text" name="text" placeholder="What needs to be done?" size="25"/>
+          <input id="button" class="btn-sm" type="submit" value="Submit" />
+        </form>
+
+        <ul id="list">
+
+        <li ng-show='view == 0' ng-repeat="toDo in toDos">
+          <p id="para" ng-class="{strike: deleted}">{{ toDo.text }}</p>
+          <input id="checkbox" type="checkbox" ng-model="deleted" ng-click="clearOne($index)">
+        </li>
+
+        <li ng-show='view == 1' ng-repeat="toDo in toDos | filter: { done: true }">
+          <p>{{ toDo.text }}</p>
+        </li>
+
+        <li ng-show='view == 2' ng-repeat="toDo in toDos | filter: { done: false }">
+          <p>{{ toDo.text }}</p>
+        </li>
+      </ul>
+
+    <p>Tasks left to complete: {{ tasks }}</p>
+
+    <p>Total Tasks: {{ toDos.length}}</p>
+
+    <button id="allButton" class="btn-sm" ng-click="changeView(0)">All</button>
+    <button id="completeButton" class="btn-sm" ng-click="changeView(1)">Complete</button>
+    <button id="incompleteButton" class="btn-sm" ng-click="changeView(2)">Incomplete</button>
+    <button id="clearButton" class="btn-sm" ng-click="clear()">Clear All</button>
+
+    </div>
+ </body>
+</html>
+
